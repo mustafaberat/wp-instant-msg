@@ -7,8 +7,7 @@ const Main: React.FC = () => {
   // Function to handle input change
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Filter out anything that is not a digit or space
-    const filteredValue = e.target.value.replace(/[^0-9 ]/g, "");
-    setPhoneNumber(filteredValue);
+    setPhoneNumber(e.target.value);
   };
 
   // Function to handle Send button click
@@ -18,7 +17,7 @@ const Main: React.FC = () => {
     console.log("Sending phone number:", cleanedPhoneNumber);
     if (cleanedPhoneNumber) {
       // Open WhatsApp in a new tab with the cleaned phone number
-      window.open(`http://wa.me/${cleanedPhoneNumber}`, '_blank');
+      window.open(`http://wa.me/${cleanedPhoneNumber}`, "_blank");
     } else {
       console.error("Phone number is empty or invalid.");
     }
@@ -54,7 +53,7 @@ const Main: React.FC = () => {
             <option value="+351">🇵🇹 +351</option>
           </select>
           <input
-            type="text" // Using text to allow filtering
+            type="number"
             value={phoneNumber}
             onChange={handlePhoneNumberChange}
             className="phone-input"

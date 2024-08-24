@@ -1,13 +1,9 @@
 :root {
   /* Color Variables */
-  --primary-color: #3f7e8c; /* Teal color for primary actions */
-  --background-color: #0d0d0d; /* Dark background color */
-  --text-color: #ece5dd; /* Light text color */
-  --border-color: #3f7e8c; /* Teal color for borders */
-  --header-background: #0d0d0d; /* Dark background for header */
-  --button-hover: #2e5c6d; /* Slightly darker teal for button hover */
-  --footer-background: #0d0d0d; /* Dark background for footer */
-  --footer-text-color: #ece5dd; /* Light text color for footer */
+  --primary-color: #1dbdf7; /* Teal color for primary actions */
+  --text-color: #cdf6ff; /* Light text color */
+  --header-background: #010D00; /* Dark background for header */
+  --button-hover: #129fd2; /* Slightly darker teal for button hover */
 }
 
 /* General Body Styles */
@@ -15,39 +11,37 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--background-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url("/whatsapp-background.png"); /* Background with icons */
-  background-size: contain; /* Ensure the image covers the entire area */
-  background-position: center; /* Center the image */
-  background-repeat: inherit; /* Prevent repeating the image */
+  background-image: url("/whatsapp-background.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: inherit;
 }
 
 /* Header Styles */
 .header {
-  background-color: var(--header-background); /* Dark background for header */
-  color: var(--text-color); /* Light text color */
-  padding: 20px 10px; /* Add padding for spacing */
+  background-color: var(--header-background);
+  color: var(--text-color);
+  padding: 20px 10px;
   text-align: center;
-  border-bottom: 2px solid var(--border-color); /* Add a border at the bottom */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-  font-family: "Roboto", sans-serif; /* Use the imported font */
-  position: relative; /* Ensure it’s not sticky */
+  border-bottom: 2px solid var(--primary-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
 }
 
 .header h1 {
-  margin: 0; /* Remove default margin */
-  font-size: 2.5rem; /* Larger font size for the main heading */
-  font-weight: 700; /* Make the font bold */
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .header h2 {
-  margin: 10px 0 0; /* Margin for spacing below the main heading */
-  font-size: 1.5rem; /* Slightly smaller font size for subheading */
-  font-weight: 400; /* Normal font weight */
+  margin: 10px 0 0;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 /* Main Styles */
@@ -63,48 +57,48 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid var(--border-color);
-  border-radius: 12px; /* More rounded corners for a modern look */
-  padding: 30px; /* Increased padding for a larger container */
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 30px;
   background-color: var(--header-background);
-  max-width: 80%; /* Increase the maximum width for better layout */
+  max-width: 80%;
   width: 100%;
   margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-.country-code-selector {
-  display: flex;
-  align-items: center; /* Align items vertically center */
-  width: 100%;
-  margin-bottom: 20px; /* Margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles for country code dropdown */
+/* Country Code Selector */
+.country-code-selector {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .country-code-dropdown {
   padding: 10px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--primary-color);
   border-radius: 6px;
-  background-color: var(--background-color);
+  background-color: var(--header-background);
   color: var(--text-color);
   font-size: 16px;
-  width: 100px; /* Fixed width for dropdown */
-  margin-right: 10px; /* Space between dropdown and input */
-  height: 50px; /* Height to match the input */
+  width: 100px;
+  margin-right: 10px;
+  height: 50px;
   box-sizing: border-box;
 }
 
-/* Styles for phone number input */
 .phone-input {
   padding: 10px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--primary-color);
   border-radius: 6px;
   outline: none;
   transition: border-color 0.3s;
-  background-color: var(--background-color);
+  background-color: var(--header-background);
   color: var(--text-color);
-  font-size: 16px;
-  flex: 1; /* Make input field take up remaining space */
-  height: 50px; /* Height to match the dropdown */
+  font-size: 20px;
+  flex: 1;
+  height: 50px;
   box-sizing: border-box;
 }
 
@@ -113,14 +107,14 @@ body {
 }
 
 .send-button {
-  padding: 12px 25px; /* Increased padding for a better button */
+  padding: 12px 25px;
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
-  border-radius: 6px; /* Rounded corners for consistency */
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 18px; /* Larger font size for better clickability */
+  font-size: 18px;
   width: 100%;
 }
 
@@ -131,51 +125,35 @@ body {
 /* HowToWork Styles */
 .how-to-work {
   text-align: center;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .how-to-work h2 {
-  background-color: rgba(
-    13,
-    13,
-    13,
-    0.8
-  ); /* Dark semi-transparent background */
-  color: var(--text-color); /* Light text color */
-  padding: 10px;
+  width: 100%;
+  background-color: var(--header-background);
+  color: var(--text-color);
   border-radius: 5px;
-  display: inline-block;
 }
 
-/* Optional Separator Line */
-.separator {
-  margin: 20px 0;
-}
-
+/* Separator Line */
 .line {
   border: none;
-  border-top: 2px solid var(--border-color);
+  border-top: 2px solid var(--primary-color);
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto;
   position: relative;
 }
 
 .line::before {
   content: "";
   position: absolute;
-  top: -10px; /* Adjust based on your design needs */
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
   height: 20px;
-  background: var(--border-color);
+  background: var(--primary-color);
   border-radius: 50%;
-}
-
-/* Heading Styles */
-.how-to-work h2 {
-  color: var(--text-color);
-  margin-bottom: 20px;
 }
 
 /* Grid Styles */
@@ -196,59 +174,9 @@ body {
 .screenshot {
   width: 100%;
   max-width: 300px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-}
-
-.explanation {
-  color: var(--text-color);
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-/* Screenshot Styles */
-.screenshots-container {
-  margin-top: 20px;
-}
-
-.screenshot {
-  width: 100%;
-  max-width: 300px;
   margin: 10px 0;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
-}
-
-/* HowToWork Styles */
-.how-to-work {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.how-to-work h2 {
-  color: var(--text-color);
-}
-
-/* Grid container */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.screenshot {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--primary-color);
 }
 
 .explanation {
@@ -257,49 +185,31 @@ body {
   margin-top: 10px;
 }
 
-/* Footer Styles */
-.footer {
-  background-color: var(--footer-background);
-  color: var(--footer-text-color);
-  text-align: center;
-  position: fixed; /* Fixed positioning to keep the footer at the bottom */
-  bottom: 0; /* Aligns the footer to the bottom of the viewport */
-  width: 100%; /* Full width */
-  margin: 0 auto; /* Center alignment */
-}
-
-.footer a {
-  color: var(--footer-text-color);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
+/* Media Queries */
 @media (max-width: 600px) {
   .country-code-selector {
-    flex-wrap: nowrap; /* Prevent wrapping of elements */
+    flex-wrap: nowrap;
   }
 
   .country-code-dropdown {
-    width: 100px; /* Maintain fixed width */
+    width: 80px;
+    font-size: 12px;
   }
 
   .phone-input {
-    width: calc(
-      100% - 110px
-    ); /* Adjust width considering dropdown width and margin */
-    margin-left: 10px; /* Space between dropdown and input */
+    font-size: 16px;
+    width: calc(100% - 110px);
   }
+
   .header {
-    padding: 15px 5px; /* Adjust padding for smaller screens */
+    padding: 15px 5px;
   }
 
   .header h1 {
-    font-size: 1.8rem; /* Adjust font size for smaller screens */
+    font-size: 1.8rem;
   }
 
   .header h2 {
-    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    font-size: 1.2rem;
   }
 }
