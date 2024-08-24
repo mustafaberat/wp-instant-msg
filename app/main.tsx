@@ -3,21 +3,28 @@ import React, { useState } from "react";
 
 const Main: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+90"); // Default country code (TR)
 
-  // Function to handle input change
+  // Function to handle phone number input change
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Filter out anything that is not a digit or space
-    setPhoneNumber(e.target.value);
+    // Filter out anything that is not a digit
+    setPhoneNumber(e.target.value.replace(/\D/g, ""));
+  };
+
+  // Function to handle country code change
+  const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCountryCode(e.target.value);
   };
 
   // Function to handle Send button click
   const handleSend = () => {
-    // Remove spaces from the phone number
-    const cleanedPhoneNumber = phoneNumber.replace(/\s+/g, "");
-    console.log("Sending phone number:", cleanedPhoneNumber);
-    if (cleanedPhoneNumber) {
-      // Open WhatsApp in a new tab with the cleaned phone number
-      window.open(`http://wa.me/${cleanedPhoneNumber}`, "_blank");
+    // Combine country code with the phone number
+    const fullPhoneNumber = `${countryCode}${phoneNumber}`;
+    console.log(fullPhoneNumber);
+
+    if (fullPhoneNumber) {
+      // Open WhatsApp in a new tab with the full phone number
+      window.open(`http://wa.me/${fullPhoneNumber}`, "_blank");
     } else {
       console.error("Phone number is empty or invalid.");
     }
@@ -27,7 +34,11 @@ const Main: React.FC = () => {
     <div className="main">
       <div className="container">
         <div className="country-code-selector">
-          <select className="country-code-dropdown">
+          <select
+            className="country-code-dropdown"
+            value={countryCode}
+            onChange={handleCountryCodeChange}
+          >
             <option value="+90">🇹🇷 +90</option>
             <option value="+1">🇺🇸 +1</option>
             <option value="+44">🇬🇧 +44</option>
@@ -53,7 +64,7 @@ const Main: React.FC = () => {
             <option value="+351">🇵🇹 +351</option>
           </select>
           <input
-            type="number"
+            type="text"
             value={phoneNumber}
             onChange={handlePhoneNumberChange}
             className="phone-input"
